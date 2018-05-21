@@ -1,0 +1,110 @@
+---
+swagger: "2.0"
+info: 
+  version: "1.0.0"
+  title: Confluent Schema Registry API
+host: localhost:8081
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/vnd.schemaregistry.v1+json
+produces:
+  - application/vnd.schemaregistry.v1+json 
+  - application/json
+paths:
+  /subjects:
+    get:
+  /schemas/ids/{schemaId}:
+    get:
+      parameters:
+        - name: schemaId
+          in: path
+          required: true
+          type: int
+  /subjects/{subject}:
+    delete:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+    post:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+  /subjects/{subject}/versions:
+    get:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+    post:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+  /subjects/{subject}/versions/{versionId}:
+    get:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+        - name: versionId
+          in: path
+          required: true
+          type: int
+    delete:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+        - name: versionId
+          in: path
+          required: true
+          type: int
+  /subjects/{subject}/versions/{versionId}/schema:
+    get:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+        - name: versionId
+          in: path
+          required: true
+          type: int
+  /compatibility/subjects/{subject}/versions/{versionId}:
+    post:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+        - name: versionId
+          in: path
+          required: true
+          type: int
+  /config:
+    put:
+    get:
+  /config/{subject}:
+    put:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string
+    get:
+      parameters:
+        - name: subject
+          in: path
+          required: true
+          type: string

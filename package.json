@@ -1,0 +1,26 @@
+{
+  "name": "schema-registry-api",
+  "version": "0.0.0",
+  "description": "Schema Registry API",
+  "main": "validate.js",
+  "scripts": {
+    "test": "node validate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sysco-middleware/schema-registry-api.git"
+  },
+  "keywords": [
+    "schema-registry",
+    "confluent",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/sysco-middleware/schema-registry-api/issues"
+  },
+  "homepage": "https://github.com/sysco-middleware/schema-registry-api#readme",
+  "devDependencies": {
+    "js-yaml": "^3.6.0",
+    "sway": "^1.0.0"
+  }
+}
