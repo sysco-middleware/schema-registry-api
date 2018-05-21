@@ -16,13 +16,19 @@ produces:
 paths:
   /subjects:
     get:
+      responses:
+        200:
+          description: OK
   /schemas/ids/{schemaId}:
     get:
       parameters:
         - name: schemaId
           in: path
           required: true
-          type: int
+          type: integer
+      responses:
+        200:
+          description: OK
   /subjects/{subject}:
     delete:
       parameters:
@@ -30,12 +36,18 @@ paths:
           in: path
           required: true
           type: string
+      responses:
+        200:
+          description: OK
     post:
       parameters:
         - name: subject
           in: path
           required: true
           type: string
+      responses:
+        200:
+          description: OK
   /subjects/{subject}/versions:
     get:
       parameters:
@@ -43,12 +55,18 @@ paths:
           in: path
           required: true
           type: string
+      responses:
+        200:
+          description: OK
     post:
       parameters:
         - name: subject
           in: path
           required: true
           type: string
+      responses:
+        200:
+          description: OK
   /subjects/{subject}/versions/{versionId}:
     get:
       parameters:
@@ -59,7 +77,10 @@ paths:
         - name: versionId
           in: path
           required: true
-          type: int
+          type: integer
+      responses:
+        200:
+          description: OK
     delete:
       parameters:
         - name: subject
@@ -69,7 +90,10 @@ paths:
         - name: versionId
           in: path
           required: true
-          type: int
+          type: integer
+      responses:
+        200:
+          description: OK
   /subjects/{subject}/versions/{versionId}/schema:
     get:
       parameters:
@@ -80,7 +104,10 @@ paths:
         - name: versionId
           in: path
           required: true
-          type: int
+          type: integer
+      responses:
+        200: 
+          description: OK
   /compatibility/subjects/{subject}/versions/{versionId}:
     post:
       parameters:
@@ -91,10 +118,19 @@ paths:
         - name: versionId
           in: path
           required: true
-          type: int
+          type: integer
+      responses:
+        200:
+          description: OK
   /config:
     put:
+      responses:
+        200:
+          description: OK
     get:
+      responses:
+        200:
+          description: OK
   /config/{subject}:
     put:
       parameters:
@@ -102,9 +138,15 @@ paths:
           in: path
           required: true
           type: string
+      responses:
+        200:
+          description: OK
     get:
       parameters:
         - name: subject
           in: path
           required: true
           type: string
+      responses:
+        200:
+          description: OK 
